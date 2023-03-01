@@ -62,3 +62,7 @@ gem 'faker'
 group :development, :test do
   gem 'factory_bot_rails'
 end
+
+# Bootstrap for styling 
+
+gem 'bootstrap', '~> 4.6'
