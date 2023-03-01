@@ -1,0 +1,2 @@
+class AdvancePayment < ApplicationRecord
+end
