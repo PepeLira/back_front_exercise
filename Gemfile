@@ -54,3 +54,11 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Faker for quickly generate fake data
+gem 'faker'
+
+# Factory bot to create test data
+group :development, :test do
+  gem 'factory_bot_rails'
+end
