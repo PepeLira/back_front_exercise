@@ -80,7 +80,7 @@
         <td><%= advance.date %></td>
         <td><%= advance.invoice_n %></td>
         <td><%= advance.advance_per %> %</td>
-        <td><%= advance.final_price %></td>
+        <td>$<%= format_clp_currency(advance.final_price) %></td>
         <td><a class="<%= status_badge_color(advance.status)%>"><%= advance.status %><a></td>
         <td><%= advance.debtor %></td>
         <td>

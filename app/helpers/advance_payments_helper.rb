@@ -9,4 +9,8 @@ module AdvancePaymentsHelper
       'badge badge-warning'
     end
   end
+
+  def format_clp_currency(money)
+    money.to_s.reverse.scan(/\d{1,3}/).join('.').reverse
+  end
 end
