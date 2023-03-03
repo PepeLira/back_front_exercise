@@ -5,24 +5,23 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-2 bg-dark text-white">
-        <%= render partial: 'layouts/side_navbar' %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2 bg-dark text-white">
+          <%= render partial: 'layouts/side_navbar' %>
+        </div>
+        <div class="col-md-10">
+          <%= render partial: 'layouts/header_bar' %>
+          <%= yield %>
+        </div>
       </div>
-      <div class="col-md-10">
-        <%= render partial: 'layouts/header_bar' %>
-        <%= yield %>
-      </div>
-    </div>
-  </div>
     </div>
   </body>
 </html>
