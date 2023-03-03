@@ -1,2 +1,94 @@
-<h1>AdvancePayments#index</h1>
-<p>Find me in app/views/advance_payments/index.html.erb</p>
+<nav class="navbar navbar-light bg-light pt-3 pb-3 justify-content-between">
+  <a class="navbar-brand">Cartola de Anticipos</a>
+  <form class="form-inline">
+    <button class="btn btn-primary my-2 my-sm-0" type="submit">Anticipar Factura</button>
+  </form>
+</nav>
+
+<ul class="nav justify-content mt-5 mb-4 border-bottom" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-item nav-link active" href="#" role="tab" aria-selected="true">Últimos Anticipos </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-item nav-link" href="#" role="tab" aria-selected="false">Simular Anticipo </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-item nav-link" href="#" role="tab" aria-selected="false">Mis Deudores </a>
+  </li>
+</ul>
+
+<div class="card border-warning mb-3">
+  <div class="card-body">
+    <h5 class="card-title text-warning">Estado de Solicitud #N</h5>
+    <div class="row">
+      <div class="col">Estado: <a class="badge badge-warning">Esperando Oferta</a></div>
+      <div class="col">Fecha: 23/04/2020</div>
+      <div class="col">Número de Facturas: 4</div>
+      <div class="col">Monto de Facturas: $897.000</div>
+      <div class="col"><button type="button" class="btn btn-primary">Chat con Ejecutivo</button></div>
+      <div class="col"><button type="button" class="btn btn-outline-primary">Ver Detalles</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="card border-danger mb-3">
+  <div class="card-body">
+    <h5 class="card-title text-danger">Estado de Solicitud #N</h5>
+    <div class="row">
+      <div class="col">Estado: <a class="badge badge-danger">Rechazado</a></div>
+      <div class="col">Fecha: 23/04/2020</div>
+      <div class="col">Número de Facturas: 4</div>
+      <div class="col">Monto de Facturas: $897.000</div>
+      <div class="col"><button type="button" class="btn btn-primary">Chat con Ejecutivo</button></div>
+      <div class="col"><button type="button" class="btn btn-outline-primary">Ver Detalles</button></div>
+    </div>
+  </div>
+</div>
+
+<form class="form-inline mt-3 mb-3  ">
+  <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+  
+  <div class="dropdown">
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Ordenar...
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+</form>
+
+<table class="table table-borderless table-separate justify-content-between">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">N°Facturas</th>
+      <th scope="col">% Anticipo</th>
+      <th scope="col">Monto Final</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Deudor</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @advances.each do |advance| %>
+      <tr class="bg-light rounded shadow-sm">
+        <td>#<%= advance.id %></td>
+        <td><%= advance.date %></td>
+        <td><%= advance.invoice_n %></td>
+        <td><%= advance.advance_per %> %</td>
+        <td>$<%= advance.final_price %></td>
+        <td><a class="badge badge-warning"><%= advance.status %><a></td>
+        <td><%= advance.debtor %></td>
+        <td>
+          <%= button_to '#', class: 'btn btn-link' do %>
+            <%= image_tag('table_options_ico.svg', class: 'icon') %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
