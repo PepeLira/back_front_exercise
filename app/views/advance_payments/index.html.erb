@@ -92,3 +92,11 @@
     <% end %>
   </tbody>
 </table>
+
+<ul class="pagination justify-content-center">
+  <% (1..page_count).each do |n_page| %>
+    <li class="page-item">
+      <%= link_to n_page, root_path(page: n_page), class: 'page-link' %>
+    </li>
+  <% end %>
+</ul>

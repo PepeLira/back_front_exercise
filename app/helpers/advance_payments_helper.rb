@@ -13,4 +13,8 @@ module AdvancePaymentsHelper
   def format_clp_currency(money)
     money.to_s.reverse.scan(/\d{1,3}/).join('.').reverse
   end
+
+  def page_count
+    (AdvancePayment.count / 10.0).ceil
+  end
 end

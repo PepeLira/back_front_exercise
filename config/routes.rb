@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get 'advance_payments/index'
+  get 'advance_payments/index', to: 'advance_payments#index'
+  root 'advance_payments#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -70,3 +70,7 @@ gem 'bootstrap', '~> 4.6'
 # Binding pry for debuging
 
 gem 'pry-rails', group: :development
+
+# Kaminary for easy pagination
+
+gem 'kaminari'
