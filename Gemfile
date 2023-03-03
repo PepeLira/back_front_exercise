@@ -65,7 +65,7 @@ end
 
 # Bootstrap for styling 
 
-gem 'bootstrap', '~> 4.6'
+gem 'bootstrap', '~> 4.6.2'
 
 # Binding pry for debuging
 
@@ -74,3 +74,5 @@ gem 'pry-rails', group: :development
 # Kaminary for easy pagination
 
 gem 'kaminari'
+
+gem 'jquery-rails'
