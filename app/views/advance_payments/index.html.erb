@@ -60,7 +60,7 @@
 </div>
 </form>
 
-<table class="table table-borderless table-separate justify-content-between">
+<table class="table table-borderless table-separate justify-content-between" id="advance-payments-table">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -84,9 +84,16 @@
         <td><a class="<%= status_badge_color(advance.status)%>"><%= advance.status %><a></td>
         <td><%= advance.debtor %></td>
         <td>
-          <%= button_to '#', class: 'btn btn-link' do %>
-            <%= image_tag('table_options_ico.svg', class: 'icon') %>
-          <% end %>
+          <div class="btn-group dropleft">
+            <button class="btn btn-link dropdown-toggle-no-caret" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag('table_options_ico.svg', class: 'icon') %>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to 'Eliminar', delete_advance_payment_path(advance), data: { id: advance.id }, class: 'dropdown-item delete-advance' %>
+              <%= link_to 'Aprobar', delete_advance_payment_path(advance), data: { id: advance.id }, class: 'dropdown-item delete-advance' %>
+              <a class="dropdown-item" href="#">Rechazar</a>
+            </div>
+          </div>
         </td>
       </tr>
     <% end %>
