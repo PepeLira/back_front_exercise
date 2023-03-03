@@ -66,3 +66,7 @@ end
 # Bootstrap for styling 
 
 gem 'bootstrap', '~> 4.6'
+
+# Binding pry for debuging
+
+gem 'pry-rails', group: :development
